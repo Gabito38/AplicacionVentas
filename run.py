@@ -4,6 +4,7 @@ from Controllers import Cliente_controller
 from Controllers import Producto_controller
 from Controllers import Venta_controller
 from database import db
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -25,7 +26,8 @@ def inject_active_path():
 
 @app.route("/")
 def home():
-    return "<h1>Aplicacion ventas</h1>"
+    
+    return render_template('base.html')
 
 if __name__ == "__main__":
     with app.app_context():
